@@ -2,3 +2,4 @@
 
 Members:
 - Auradee Castro
+- Miraj
