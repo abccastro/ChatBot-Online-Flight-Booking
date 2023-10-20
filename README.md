@@ -2,4 +2,3 @@
 
 Members:
 - Auradee Castro
-- Miraj Sinya
