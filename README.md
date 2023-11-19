@@ -9,4 +9,5 @@
 Members:
 - Auradee Castro
 - Miraj
--Bhumika Rajendra Babu
+- Bhumika Rajendra Babu
+- Olivia Deguit
