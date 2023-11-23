@@ -22,8 +22,11 @@ Output: "Hello, World!"
 import json
 import re
 import pickle
+import pandas as pd
+import numpy as np
 
 from flashtext import KeywordProcessor
+from concurrent.futures import ThreadPoolExecutor
 
 
 def extract_specific_key(list_of_dicts, dict_keys):
@@ -78,3 +81,16 @@ def open_pickle_file(filename):
 
     return data_object
     
+
+def parallel_processing(df, func, num_threads=3):
+    # NOTE: Change the number of threads depending on device's CPU core
+    # Split the DataFrame into chunks for parallel processing
+    chunks = np.array_split(df, num_threads)
+
+    # Use ThreadPoolExecutor for parallel processing
+    with ThreadPoolExecutor(max_workers=num_threads) as executor:
+        results = list(executor.map(func, chunks))
+
+    # Concatenate the results
+    result_df = pd.concat(results, ignore_index=True)
+    return result_df
