@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Set the map container to fill the entire screen */
+      #map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      #plane {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        z-index: 1000;
+      }
+    </style>
+    <meta charset="utf-8" />
+    <title>Move Plane Along a Line</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <img
+      id="plane"
+      src="../static/plane.jpg"
+      alt="Plane"
+      style="position: absolute; width: 32px; height: 32px; z-index: 1000"
+    />
+    <script>
+      var map = L.map("map").setView([41.5, -76.0], 4);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      // LAX to LDN
+      var startPoint = [33.63975, -118.778917];
+      var endPoint = [51.47002, -0.454295];
+      // var startPoint = [43.677194, -79.630611];
+      // var endPoint = [40.63975, -73.778917];
+      var line = L.polyline([startPoint, endPoint], { color: "blue" }).addTo(
+        map
+      );
+
+      // Add start and end markers
+      var startMarker = L.marker(startPoint).addTo(map);
+      var endMarker = L.marker(endPoint).addTo(map);
+
+      var plane = document.getElementById("plane");
+
+      var currentIndex = 0;
+      var coordinatesAlongPath = interpolateCoordinates(
+        startPoint,
+        endPoint,
+        200
+      ); // 200 intermediate points
+
+      function movePlane() {
+        if (currentIndex < coordinatesAlongPath.length) {
+          var latlng = coordinatesAlongPath[currentIndex];
+          map.panTo(latlng);
+
+          var pixelCoords = map.latLngToContainerPoint(latlng);
+          plane.style.left = pixelCoords.x - 16 + "px";
+          plane.style.top = pixelCoords.y - 16 + "px";
+
+          // Adjust the speed by changing the duration (in milliseconds) between frames
+          setTimeout(function () {
+            currentIndex++;
+            requestAnimationFrame(movePlane);
+          }, 500); // Increase the duration (e.g., 200ms) to slow down the plane
+        } else {
+          // Reset the animation when it reaches the end
+          currentIndex = 0;
+          requestAnimationFrame(movePlane);
+        }
+      }
+
+      function interpolateCoordinates(start, end, numPoints) {
+        var interpolatedCoords = [];
+        for (var i = 0; i < numPoints; i++) {
+          var fraction = i / (numPoints - 1);
+          var lat = start[0] + fraction * (end[0] - start[0]);
+          var lng = start[1] + fraction * (end[1] - start[1]);
+          interpolatedCoords.push([lat, lng]);
+        }
+        return interpolatedCoords;
+      }
+
+      movePlane();
+    </script>
+  </body>
+</html>
