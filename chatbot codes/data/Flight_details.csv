@@ -1,0 +1,37 @@
+﻿Flight_ID,Flight_number,Airline,Departing_city,Arrival_city,Departure_time,Arrival_time,Cost
+F0001,AA1745,American Airlines,Los Angeles,Miami,07:00 AM,02:50 PM,350
+F0002,NK2458,Spirit Airlines,Los Angeles,Miami,12:35 PM,10:49 PM,280
+F0003,UA1640,United Airlines,Los Angeles,Miami,11:48 AM,09:46 PM,320
+F0004,AA344,American Airlines,Miami,Los Angeles,09:35 AM,12:27 PM,400
+F0005,NK3152,Spirit Airlines,Miami,Los Angeles,01:55 PM,08:09 PM,300
+F0006,UA2215,United Airlines,Miami,Los Angeles,04:58 PM,09:24 PM,310
+F0007,NK2323,Spirit Airlines,Los Angeles,New York,09:38 PM,05:55 AM,450
+F0008,AA274,American Airlines,Los Angeles,New York,12:30 PM,08:53 PM,500
+F0009,AA2201,American Airlines,Los Angeles,New York,02:05 PM,10:29 PM,480
+F0010,NK2322,Spirit Airlines,New York,Los Angeles,06:55 AM,10:11 AM,380
+F0011,AA255,American Airlines,New York,Los Angeles,09:00 AM,12:41 PM,420
+F0012,AA300,American Airlines,New York,Los Angeles,03:30 PM,07:01 PM,410
+F0013,UA923,United Airlines,Los Angeles,London,07:00 PM,01:30 PM,800
+F0014,AA6983,American Airlines,Los Angeles,London,08:50 PM,03:10 PM,850
+F0015,BA0268,British Airways,Los Angeles,London,08:50 PM,03:10 PM,900
+F0016,UA935,United Airlines,London,Los Angeles,03:20 PM,04:35 PM,780
+F0017,BA283,British Airways,London,Los Angeles,10:10 AM,01:25 PM,820
+F0018,AA137,American Airlines,London,Los Angeles,11:15 AM,02:50 PM,790
+F0019,AA2206,American Airlines,Miami,New York,02:40 PM,05:41 PM,150
+F0020,NK1591,Spirit Airlines,Miami,New York,11:15 AM,02:29 PM,120
+F0021,AA688,American Airlines,Miami,New York,08:27 AM,11:30 AM,130
+F0022,NK1590,Spirit Airlines,New York,Miami,08:25 AM,11:40 AM,160
+F0023,AA2603,American Airlines,New York,Miami,05:29 PM,08:46 PM,140
+F0024,AA1174,American Airlines,New York,Miami,06:29 PM,09:43 PM,170
+F0025,BA0206,British Airways,Miami,London,05:10 PM,06:30 AM,350
+F0026,UA2013,United Airlines,Miami,London,06:46 PM,11:05 AM,380
+F0027,UA2362,United Airlines,Miami,London,04:15 PM,11:15 AM,400
+F0028,BA207,British Airways,London,Miami,10:00 AM,02:50 PM,420
+F0029,BA209,British Airways,London,Miami,02:15 PM,07:05 PM,390
+F0030,AA57,American Airlines,London,Miami,11:45 AM,04:45 PM,380
+F0031,AA6923,American Airlines,New York,London,06:50 PM,06:45 AM,800
+F0032,BA1594,British Airways,New York,London,10:10 AM,10:10 PM,850
+F0033,BA1515,British Airways,New York,London,08:25 PM,10:25 AM,900
+F0034,AA105,American Airlines,London,New York,03:35 PM,06:15 PM,780
+F0035,BA173,British Airways,London,New York,11:20 AM,02:25 PM,820
+F0036,UA14,United Airlines,London,New York,06:45 PM,06:55 AM,790
