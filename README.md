@@ -1,12 +1,8 @@
 # ChatBot-Online-Flight-Booking
 
-#Passport reader
-- Two different models implemented to read the text from passport images tesseract orc and paddleorc. 
-- Paddleorc generated more accurate results than compared to tesseract orc.
-- Combination of Image preprocessing methods resulted slightly accurate output.
-  - Preprocessing used: Greyscale(cv2.cvtColor()), thresholding(cv2.threshold()), denoising(cv2.GaussianBlur())    
+The ChatBot Flight Booking System project encompasses the development of an advanced flight booking interface using chatbot technology. Key features include round-the-clock chatbot assistance, seamless booking system, real-time flight tracking, review sentiment analysis, and comprehensive data analytics. The project aims to enhance user experience, increase operational efficiency, and support informed decision-making through innovative technology solutions. Figure 1 is the model architecture of the project.	    
 
-Members:
+# Members:
 - Auradee Castro
 - Miraj
 - Bhumika Rajendra Babu
