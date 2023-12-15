@@ -76,7 +76,6 @@ def generate_vader_labels(text):
     '''    
     sid = SentimentIntensityAnalyzer()
     sentiment_scores = sid.polarity_scores(text)
-
     # Determine the overall sentiment
     if sentiment_scores['compound'] >= 0.1:
         sentiment = 'positive'
@@ -84,5 +83,4 @@ def generate_vader_labels(text):
         sentiment = 'negative'
     else:
         sentiment = 'neutral'
-
     return sentiment
